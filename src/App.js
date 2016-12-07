@@ -87,6 +87,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
         <form onSubmit={this.onNewProductSubmit.bind(this)}>
           <h2>New Product</h2>
           <div>
@@ -105,7 +106,9 @@ class App extends Component {
         </form>
         <ul>
           {this.state.items.map((item, index) => {
-            return <li key={item.id}>{item.name} <span onClick={this.onClickDelete.bind(this, item)}>Delete</span></li>
+            return (
+              <li key={item.id}>{item.name} <span onClick={this.onClickDelete.bind(this, item)}>Delete</span></li>
+            )
           })}
         </ul>
       </div>
